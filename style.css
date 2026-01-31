@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f8e8f2, #ffffff);
+  color: #333;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+}
+.logo span {
+  color: #9a4b7b;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(1rem, 2vw, 2rem);
+  font-weight: 600;
+}
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.nav-links li:hover {
+  color: #9a4b7b;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* TEXT */
+.hero-content h4 {
+  color: #9a4b7b;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.cta {
+  display: flex;
+  gap: clamp(0.6rem, 2vw, 1rem);
+  margin-bottom: 2.5rem;
+}
+
+.primary,
+.secondary {
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  padding: clamp(0.6rem, 1.8vw, 0.9rem)
+           clamp(1.2rem, 3vw, 1.8rem);
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background: #9a4b7b;
+  color: white;
+  border: none;
+}
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(154,75,123,0.3);
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #9a4b7b;
+  color: #9a4b7b;
+}
+.secondary:hover {
+  background: #9a4b7b;
+  color: white;
+}
+
+/* ---------------- STATS ---------------- */
+.stats {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.stats strong {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  display: block;
+}
+
+.stats span {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  opacity: 0.8;
+}
+
+/* ---------------- IMAGE ---------------- */
+.hero-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-bg {
+  position: absolute;
+  width: clamp(260px, 40vw, 420px);
+  height: clamp(260px, 40vw, 420px);
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #d9b1c8, #9a4b7b);
+  z-index: 1;
+}
+
+.img-mask {
+  width: clamp(200px, 32vw, 320px);
+  height: clamp(200px, 32vw, 320px);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.img-mask img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.25));
+}
+
+/* ---------------- TABLET ---------------- */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cta,
+  .stats {
+    justify-content: center;
+    margin: 1rem;
+  }
+
+  .hero-content p {
+    margin: auto;
+  }
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+
+  .stats {
+        flex-direction: row;
+        gap: 1rem;
+        margin: 1rem;
+  }
+}
